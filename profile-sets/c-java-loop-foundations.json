@@ -11,9 +11,9 @@
       "java"
     ],
     "timing": {
-      "allowReset": true,
       "enabled": false,
-      "minutes": 120
+      "minutes": 120,
+      "allowReset": true
     },
     "persistence": {
       "enabled": true
@@ -23,6 +23,17 @@
     }
   },
   "categories": [
+    {
+      "id": "loop-foundations-trace",
+      "name": "Learn Loop Flow",
+      "enabled": false,
+      "profileIds": [
+        "foundations-trace-while-basics",
+        "foundations-trace-do-while-basics",
+        "foundations-trace-for-basics",
+        "foundations-trace-counters-accumulators"
+      ]
+    },
     {
       "id": "loop-foundations-simulate",
       "name": "Predict Loop Results",
@@ -34,8 +45,359 @@
         "foundations-simulate-counters-accumulators"
       ]
     },
+    {
+      "id": "loop-foundations-order",
+      "name": "Build Loop Programs",
+      "enabled": false,
+      "profileIds": [
+        "foundations-order-while-basics",
+        "foundations-order-do-while-basics",
+        "foundations-order-for-basics",
+        "foundations-order-counters-accumulators"
+      ]
+    }
   ],
   "profiles": [
+    {
+      "enabled": true,
+      "meta": {
+        "id": "foundations-trace-while-basics",
+        "name": "While Loop Basics",
+        "description": "Trace build confidence with test-before-body repetition, zero iterations, and loop exit values."
+      },
+      "shape": {
+        "operandSources": {
+          "variable": 1,
+          "literal": 1
+        },
+        "operandRange": {
+          "min": 0,
+          "max": 20
+        },
+        "allowNegativeOperands": false
+      },
+      "operators": {
+        "allowed": [
+          "+",
+          "-",
+          "*",
+          "/",
+          "%",
+          "<",
+          ">",
+          "<=",
+          ">=",
+          "==",
+          "!="
+        ]
+      },
+      "template": "loop source program",
+      "scoring": {
+        "itemCount": "manifest",
+        "pointsPerItem": 2,
+        "statementCommits": true
+      },
+      "content": {
+        "mode": "source-files",
+        "source": {
+          "library": "source-programs",
+          "exerciseSet": "loop-while-basics"
+        },
+        "values": {
+          "variables": "seeded",
+          "input": "seeded"
+        },
+        "selection": {
+          "count": "all",
+          "shuffle": true
+        }
+      },
+      "lesson": {
+        "focus": "program-flow",
+        "constructs": [
+          "loop"
+        ]
+      },
+      "interaction": {
+        "declarations": "interactive"
+      },
+      "presentation": {
+        "workspace": "source-program",
+        "timeline": "statement-modal",
+        "flowTrail": true
+      },
+      "behavior": {
+        "interactionMode": "guided",
+        "allowUndo": true,
+        "allowRetry": true,
+        "allowReviewFlags": true,
+        "showNeutralGuidance": true,
+        "showScores": true,
+        "feedbackRelease": "immediate",
+        "lockItemAfterCheck": false,
+        "showCorrectSolution": true,
+        "manualResponses": {
+          "mode": "automatic",
+          "namedValueRate": 0,
+          "operatorRate": 0
+        }
+      }
+    },
+    {
+      "enabled": true,
+      "meta": {
+        "id": "foundations-trace-do-while-basics",
+        "name": "Do While Loop Basics",
+        "description": "Trace practice body-before-test repetition and the guaranteed first iteration."
+      },
+      "shape": {
+        "operandSources": {
+          "variable": 1,
+          "literal": 1
+        },
+        "operandRange": {
+          "min": 0,
+          "max": 20
+        },
+        "allowNegativeOperands": false
+      },
+      "operators": {
+        "allowed": [
+          "+",
+          "-",
+          "*",
+          "/",
+          "%",
+          "<",
+          ">",
+          "<=",
+          ">=",
+          "==",
+          "!="
+        ]
+      },
+      "template": "loop source program",
+      "scoring": {
+        "itemCount": "manifest",
+        "pointsPerItem": 2,
+        "statementCommits": true
+      },
+      "content": {
+        "mode": "source-files",
+        "source": {
+          "library": "source-programs",
+          "exerciseSet": "loop-do-while-basics"
+        },
+        "values": {
+          "variables": "seeded",
+          "input": "seeded"
+        },
+        "selection": {
+          "count": "all",
+          "shuffle": true
+        }
+      },
+      "lesson": {
+        "focus": "program-flow",
+        "constructs": [
+          "loop"
+        ]
+      },
+      "interaction": {
+        "declarations": "interactive"
+      },
+      "presentation": {
+        "workspace": "source-program",
+        "timeline": "statement-modal",
+        "flowTrail": true
+      },
+      "behavior": {
+        "interactionMode": "guided",
+        "allowUndo": true,
+        "allowRetry": true,
+        "allowReviewFlags": true,
+        "showNeutralGuidance": true,
+        "showScores": true,
+        "feedbackRelease": "immediate",
+        "lockItemAfterCheck": false,
+        "showCorrectSolution": true,
+        "manualResponses": {
+          "mode": "automatic",
+          "namedValueRate": 0,
+          "operatorRate": 0
+        }
+      }
+    },
+    {
+      "enabled": true,
+      "meta": {
+        "id": "foundations-trace-for-basics",
+        "name": "For Loop Basics",
+        "description": "Trace trace initialization, condition, body, update, and exit in a complete for-loop cycle."
+      },
+      "shape": {
+        "operandSources": {
+          "variable": 1,
+          "literal": 1
+        },
+        "operandRange": {
+          "min": 0,
+          "max": 20
+        },
+        "allowNegativeOperands": false
+      },
+      "operators": {
+        "allowed": [
+          "+",
+          "-",
+          "*",
+          "/",
+          "%",
+          "<",
+          ">",
+          "<=",
+          ">=",
+          "==",
+          "!="
+        ]
+      },
+      "template": "loop source program",
+      "scoring": {
+        "itemCount": "manifest",
+        "pointsPerItem": 2,
+        "statementCommits": true
+      },
+      "content": {
+        "mode": "source-files",
+        "source": {
+          "library": "source-programs",
+          "exerciseSet": "loop-for-basics"
+        },
+        "values": {
+          "variables": "seeded",
+          "input": "seeded"
+        },
+        "selection": {
+          "count": "all",
+          "shuffle": true
+        }
+      },
+      "lesson": {
+        "focus": "program-flow",
+        "constructs": [
+          "loop"
+        ]
+      },
+      "interaction": {
+        "declarations": "interactive"
+      },
+      "presentation": {
+        "workspace": "source-program",
+        "timeline": "statement-modal",
+        "flowTrail": true
+      },
+      "behavior": {
+        "interactionMode": "guided",
+        "allowUndo": true,
+        "allowRetry": true,
+        "allowReviewFlags": true,
+        "showNeutralGuidance": true,
+        "showScores": true,
+        "feedbackRelease": "immediate",
+        "lockItemAfterCheck": false,
+        "showCorrectSolution": true,
+        "manualResponses": {
+          "mode": "automatic",
+          "namedValueRate": 0,
+          "operatorRate": 0
+        }
+      }
+    },
+    {
+      "enabled": true,
+      "meta": {
+        "id": "foundations-trace-counters-accumulators",
+        "name": "Counters and Accumulators",
+        "description": "Trace use counters and running totals or products across simple loops."
+      },
+      "shape": {
+        "operandSources": {
+          "variable": 1,
+          "literal": 1
+        },
+        "operandRange": {
+          "min": 0,
+          "max": 20
+        },
+        "allowNegativeOperands": false
+      },
+      "operators": {
+        "allowed": [
+          "+",
+          "-",
+          "*",
+          "/",
+          "%",
+          "<",
+          ">",
+          "<=",
+          ">=",
+          "==",
+          "!="
+        ]
+      },
+      "template": "loop source program",
+      "scoring": {
+        "itemCount": "manifest",
+        "pointsPerItem": 2,
+        "statementCommits": true
+      },
+      "content": {
+        "mode": "source-files",
+        "source": {
+          "library": "source-programs",
+          "exerciseSet": "loop-counters-accumulators"
+        },
+        "values": {
+          "variables": "seeded",
+          "input": "seeded"
+        },
+        "selection": {
+          "count": "all",
+          "shuffle": true
+        }
+      },
+      "lesson": {
+        "focus": "program-flow",
+        "constructs": [
+          "loop"
+        ]
+      },
+      "interaction": {
+        "declarations": "interactive"
+      },
+      "presentation": {
+        "workspace": "source-program",
+        "timeline": "statement-modal",
+        "flowTrail": true
+      },
+      "behavior": {
+        "interactionMode": "guided",
+        "allowUndo": true,
+        "allowRetry": true,
+        "allowReviewFlags": true,
+        "showNeutralGuidance": true,
+        "showScores": true,
+        "feedbackRelease": "immediate",
+        "lockItemAfterCheck": false,
+        "showCorrectSolution": true,
+        "manualResponses": {
+          "mode": "automatic",
+          "namedValueRate": 0,
+          "operatorRate": 0
+        }
+      }
+    },
     {
       "enabled": true,
       "meta": {
@@ -394,4 +756,3 @@
     }
   ]
 }
-
